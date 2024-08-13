@@ -1,0 +1,54 @@
+ nano shopping.txt
+
+2012-07-16     15:43	 Bangalore	Men's Clothing	208.97	Visa	
+2012-07-18     20:15	 Mumbai  	Electronics	1005.20	cash
+
+nano mapper.py 
+
+import string
+import fileinput
+	
+for line in fileinput.input():
+    data = line.strip().split("\t")
+    if len(data) == 6:
+        date, time, location, item, cost, payment = data
+        print "{0}\t{1}".format(location, cost)
+
+
+nano reducer.py
+
+import fileinput
+transactions_count = 0
+sales_total = 0
+for line in fileinput.input():
+    data = line.strip().split("\t")    
+    if len(data) != 2:
+        # Something has gone wrong. Skip this line.
+        continue
+    current_key, current_value = data
+    transactions_count += 1
+    sales_total += float(current_value)
+print transactions_count, "\t", sales_total
+**************************
+
+cat word_count_data.txt | python mapper.py  | sort -k1,1 | python reducer.py 
+
+start-all.sh
+
+jps
+
+hdfs dfs -mkdir /shoppingcart
+
+hdfs dfs -copyFromLocal /home/hduser/Documents/shopping.txt  /shoppingcart
+
+hdfs dfs -ls /
+chmod 777 mapper.py reducer.py 
+
+ls -l
+
+hadoop jar /home/hduser/Documents/hadoop-streaming-2.7.3.jar \
+
+> -input /shoppingcart/shopping.txt \
+> -output /shoppingcart/output \
+> -mapper /home/hduser/Documents/mapper.py \
+> -reducer /home/hduser/Documents/reducer.py 
