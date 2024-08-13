@@ -2,7 +2,7 @@
 cd Documents/
 ```
 ```py
-viresh.txt 
+ nano viresh.txt 
 ```
 ```py
 
