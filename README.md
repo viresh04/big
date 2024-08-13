@@ -1,3 +1,9 @@
+# 1st and 2nd prg
+## 2nd prg viresh.txt
+```py
+2012-07-16     15:43	 Bangalore	Men's Clothing	208.97	Visa	
+2012-07-18     20:15	 Mumbai  	Electronics	1005.20	cash
+```
 ```py
 cd Documents/
 ```
