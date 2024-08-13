@@ -38,15 +38,13 @@ nano word_count_data.txt
 
 ```
 
-```
-
 
 
 # 1.Map Reduce program to read a text file count the number of occurrences of the words.
 
 # 1. mapper.py
 
-- mapper.py
+-mapper.py
 
 ```py
 #!/usr/bin/env python
