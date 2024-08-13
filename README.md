@@ -2,43 +2,56 @@
 cd Documents/
 ```
 ```py
-nano word_count_data.txt 
+viresh.txt 
 ```
 ```py
 
 ```
 ```py
-
+viresh.txt | python mapper.py 
 ```
 ```py
-
+nano reducer.py 
 ```
 ```py
-
+cat viresh.txt | python mapper.py  | sort -k1,1 | python reducer.py 
 ```
 ```py
-
+start-all.sh
 ```
 ```py
-
+jps
 ```
 ```py
-
+hdfs dfs -mkdir /vd
 ```
 ```py
-
+hdfs dfs -copyFromLocal /home/hduser/Documents/viresh.txt  /vd
 ```
 ```py
-
+hdfs dfs -ls /
 ```
 ```py
-
+chmod 777 mapper.py reducer.py 
 ```
 ```py
-
+ls -l
 ```
-
-
+```py
+hadoop jar /home/hduser/Documents/hadoop-streaming-2.7.3.jar \
+```
+```py
+-input /word_count_in_python/word_count_data.txt \
+```
+```py
+-output /word_count_in_python/output \
+```
+```py
+-mapper /home/hduser/Documents/mapper.py \	
+```
+```py
+reducer /home/hduser/Documents/reducer.py 
+```
 
 # 1.Map Reduce program to read a text file count the number of occurrences of the words.
 
