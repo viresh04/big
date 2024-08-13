@@ -44,10 +44,10 @@ ls -l
 hadoop jar /home/hduser/Documents/hadoop-streaming-2.7.3.jar \
 ```
 ```py
--input /word_count_in_python/word_count_data.txt \
+-input /vd/viresh.txt \
 ```
 ```py
--output /word_count_in_python/output \
+-output /vd/output \
 ```
 ```py
 -mapper /home/hduser/Documents/mapper.py \	
