@@ -53,7 +53,7 @@ hadoop jar /home/hduser/Documents/hadoop-streaming-2.7.3.jar \
 -mapper /home/hduser/Documents/mapper.py \	
 ```
 ```py
-reducer /home/hduser/Documents/reducer.py 
+-reducer /home/hduser/Documents/reducer.py 
 ```
 
 # 1.Map Reduce program to read a text file count the number of occurrences of the words.
