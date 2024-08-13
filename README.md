@@ -12,6 +12,7 @@ viresh.txt | python mapper.py
 ```
 ```py
 nano reducer.py
+```
 ```py
 reducer code
 ```
