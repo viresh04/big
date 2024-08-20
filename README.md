@@ -8,16 +8,24 @@
 cd Documents/
 ```
 ```py
- nano viresh.txt 
+ nano viresh.txt
+```py
+cat viresh.txt
+``` 
 ```
 ```py
-mapper code
+ nano mapper.py
 ```
 ```py
-viresh.txt | python mapper.py 
+cat  mapper.py
+```py
+ cat viresh.txt | python mapper.py 
 ```
 ```py
 nano reducer.py
+```py
+cat reducer.py
+
 ```
 ```py
 reducer code
