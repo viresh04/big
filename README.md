@@ -18,6 +18,7 @@ cat viresh.txt
 ```
 ```py
 cat  mapper.py
+```
 ```py
  cat viresh.txt | python mapper.py 
 ```
