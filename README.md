@@ -9,10 +9,10 @@ cd Documents/
 ```
 ```py
  nano viresh.txt
+```
 ```py
 cat viresh.txt
 ``` 
-```
 ```py
  nano mapper.py
 ```
