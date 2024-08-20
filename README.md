@@ -149,3 +149,6 @@ for line in fileinput.input():
 print transactions_count, "\t", sales_total
 
 ```
+```py
+hdfs dfsadmin -safemode leave
+```
