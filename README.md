@@ -5,6 +5,37 @@
 2012-07-18     20:15	 Mumbai  	Electronics	1005.20	cash
 ```
 ```py
+cd Documents
+sudo mkdir termwork1
+cd terwork1
+sudo nano word.txt
+cat word.txt
+sudo nano mapper.py
+cat mapper.py
+ls
+cat word.txt | python mapper.py
+sudo nano reduer.py
+cat reducer.py
+cat word.txt | python mapper.py | python reducer.py
+jps
+start-all.sh
+jps
+hdfs dfs -mkdir /tw1
+hdfs dfs -ls/
+hdfs dfs -copyFromLocal /home/hduser/Documents/twerwork1/word.txt/tw1
+hdfs dfs -ls/tw1
+sudo chmod 777 mapper.py reducer.py
+ls -l
+hadoop jar /home/hduser/docments/hadoop-streaming 2.7.3 jar \
+-input /tw1/word.txt \
+-output /tw1/123 \
+-mapper /home/hduser/Documents/termwork1/mapper.py \
+-reducer /home/hdusre/Documents/termwork1/redcer.py
+
+hdfs dfs -cat/tw1/123/part-00000
+
+```
+```py
 cd Documents/
 ```
 ```py
