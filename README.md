@@ -8,32 +8,43 @@
 cd Documents/
 ```
 ```py
- nano viresh.txt
+sudo mkdir vmd
 ```
 ```py
-cat viresh.txt
-``` 
-```py
- nano mapper.py
+cd vmd
 ```
 ```py
-cat  mapper.py
+sudo nano age.txt
 ```
 ```py
- cat viresh.txt | python mapper.py 
+cat age.txt
 ```
 ```py
-nano reducer.py
+ls
 ```
 ```py
-cat reducer.py
-
+ sudo nano mapper1.py
 ```
 ```py
-reducer code
+ls
 ```
 ```py
-cat viresh.txt | python mapper.py  | sort -k1,1 | python reducer.py 
+cat  mapper1.py
+```
+```py
+cat age.txt |python mapper1.py 
+```
+```py
+sudo nano reducer1.py
+```
+```py
+cat reducer1.py
+```
+```py
+ls
+```
+```py
+cat viresh.txt | python mapper1.py | python reducer1.py 
 ```
 ```py
 start-all.sh
@@ -42,36 +53,49 @@ start-all.sh
 jps
 ```
 ```py
-hdfs dfs -mkdir /vd
+#safe mode
+hdfs dfsadmin –safemode leave
 ```
 ```py
-hdfs dfs -copyFromLocal /home/hduser/Documents/viresh.txt  /vd
+hdfs dfs -mkdir /ui
+```
+```py
+hdfs dfs -copyFromLocal /home/hduser/Documents/vmd/age.txt /ui
 ```
 ```py
 hdfs dfs -ls /
+or
+ hdfs dfs -ls /ui
 ```
 ```py
-chmod 777 mapper.py reducer.py 
+chmod 777 mapper1.py reducer1.py 
 ```
 ```py
 ls -l
 ```
 ```py
 hadoop jar /home/hduser/Documents/hadoop-streaming-2.7.3.jar \
+   or
+hadoop jar /home/hduser/Downloads/hadoop-streaming-2.7.3.jar \
 ```
 ```py
--input /vd/viresh.txt \
+-input /ui/age.csv \
 ```
 ```py
--output /vd/output \
+-output /ui/12345 \
 ```
 ```py
--mapper /home/hduser/Documents/mapper.py \	
+-mapper /home/hduser/Documents/vmd/mapper1.py \
 ```
 ```py
--reducer /home/hduser/Documents/reducer.py 
+-reducer /home/hduser/Documents/vmd/reducer1.py
 ```
-
+```py
+ hdfs dfs -cat /ui/12345/part-00000
+```
+```py
+localhost:50070/
+```
 # 1.Map Reduce program to read a text file count the number of occurrences of the words.
 
 # 1. mapper.py
